@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="./style.css">
-    
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <main>
-        <form action="/login.php">
-            <h3>Please Enter your Credentials to login</h3>
-            User Name <input type="text" placeholder="Enter your login ID">
+        <form action="/login.php" method="post" id="loginForm">
+            <h3>Please Enter Your Credentials to Login</h3>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your login ID" required>
             <br><br>
-            Password <input type="password" placeholder="Enter your Password">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
             <br>
-            <input class="login" type="submit" value="login">
+            <input class="login" type="submit" value="Login">
             <br>
-            <a href="registration.html" >Sign Up</a>
+            <a href="registration.html">Sign Up</a>
         </form>
-        <footer>Contact us at Hemakotibonthada@gmail.com</footer>
+        <footer>
+            <p>Contact us at <a href="mailto:Hemakotibonthada@gmail.com">Hemakotibonthada@gmail.com</a></p>
+        </footer>
     </main>
-    
 </body>
 </html>

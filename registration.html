@@ -5,58 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="./style.css">
-    
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <main>
         <header>
-           <h2> Registration Page </h2>
+            <h2>Registration Page</h2>
         </header>
-        <form action="/signup.php">
-            <p><b>Student Details</b></p>
-            First Name<input type="text" placeholder="Enter your First Name">
-            Last Name<input type="text" placeholder="Enter your Last Name">
-            Date of Birth<input type="date" >
-            <br>
-            Phone Number<input type="text" placeholder="Enter your Phone Number">
-            Email<input type="text" placeholder="Enter your Email ID">
-            <hr>
-            <p><b>College Details</b></p>
-            College Name <input type="text" placeholder="Enter your College Name">
-            Choose Course<select name="course" id="IDx">
-                <option name="B.Tech" id="IDx">B.Tech</option>
-                <option name="Degree" id="IDx">Degree</option>
-                <option name="MBBS" id="IDx">MBBS</option>
-                <option name="LAW" id="IDx">LAW</option>
-            </select>
-            <br>
-            Enter your Stream<input type="text" placeholder="Enter your Stream/Branch">
-            Enter your Semester<input text="text" placeholder="Enter Your Current Semester and Year">
-            <label for="IDy">
-           <p> Do you Have Backlogs ?</p>
-            <input type="radio" value="Yes" name="backlog" id="IDy">Yes
-        </label>
-        <label for="IDz">
-            <input type="radio" value="NO" name="backlog" id="IDz">No 
-        </label>
-        <br>
-        <p>Enter your Skills and Make "," as Seperator</p>
-        <textarea name="Skills" id="IDx" placeholder="Enter Your Skills"></textarea>
-    </form>
-        <h3>Upload Your Resume</h3>
-
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="file">Choose file to upload:</label>
-            <input type="file" id="file" name="file">
+        <form action="/signup.php" method="post" id="registrationForm">
+            <fieldset>
+                <legend>Student Details</legend>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+                <br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required>
+                <br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <br>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email ID" required>
+            </fieldset>
+            <fieldset>
+                <legend>College Details</legend>
+                <label for="collegeName">College Name:</label>
+                <input type="text" id="collegeName" name="collegeName" placeholder="Enter your College Name" required>
+                <br>
+                <label for="course">Choose Course:</label>
+                <select id="course" name="course" required>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="Degree">Degree</option>
+                    <option value="MBBS">MBBS</option>
+                    <option value="LAW">LAW</option>
+                </select>
+                <br>
+                <label for="stream">Enter your Stream:</label>
+                <input type="text" id="stream" name="stream" placeholder="Enter your Stream/Branch" required>
+                <br>
+                <label for="semester">Enter your Semester:</label>
+                <input type="text" id="semester" name="semester" placeholder="Enter Your Current Semester and Year" required>
+                <br>
+                <p>Do you have backlogs?</p>
+                <label for="backlogYes">
+                    <input type="radio" id="backlogYes" name="backlog" value="Yes" required> Yes
+                </label>
+                <label for="backlogNo">
+                    <input type="radio" id="backlogNo" name="backlog" value="No" required> No
+                </label>
+                <br>
+                <label for="skills">Enter your Skills (separated by commas):</label>
+                <textarea id="skills" name="skills" placeholder="Enter Your Skills" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Upload Your Resume</legend>
+                <label for="resume">Choose file to upload:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </fieldset>
+            <label for="address">Enter your Address:</label>
+            <textarea id="address" name="address" placeholder="Enter Your Address" required></textarea>
             <br><br>
-            <input type="submit" value="Upload File">
+            <input type="submit" value="Submit">
         </form>
-<br>
-         <textarea name="Address" id="IDx" placeholder="Enter Your Address"></textarea>
-         <br><br>
-        <input type="submit" value="submit">
-        <footer>Contact us at Hemakotibonthada@gmail.com</footer>
+        <footer>
+            <p>Contact us at <a href="mailto:Hemakotibonthada@gmail.com">Hemakotibonthada@gmail.com</a></p>
+        </footer>
     </main>
-   
 </body>
 </html>
